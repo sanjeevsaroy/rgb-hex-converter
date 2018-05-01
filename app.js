@@ -32,8 +32,9 @@ $('#hex-input').keyup(function() {
   blue = convertToDecimal(blue);
 
   // Show output
-  let rgbValue = red + ',' + green + ',' + blue;
-  $('#rgb-input').val(rgbValue);
+  $('#red-input').val(red);
+  $('#green-input').val(green);
+  $('#blue-input').val(blue);
 });
 
 // Convert a decimal to hexadecimal
