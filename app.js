@@ -1,16 +1,11 @@
 // Convert the rgb input to a hex value
-$('#rgb-input').keyup(function() {
+$('#red-input, #green-input, #blue-input').keyup(function() {
 
-  let field = $(this);
-  let input = field.val();
+  // get all the input values
+  let red = Number($('#red-input').val());
+  let green = Number($('#green-input').val());
+  let blue = Number($('#blue-input').val());
 
-  // Get each colour value
-  let values = input.split(',');
-  let red = Number(values[0]);
-  let green = Number(values[1]);
-  let blue = Number(values[2]);
-
-  // Convert each to its hexadecimal value
   red = convertToHex(red);
   green = convertToHex(green);
   blue = convertToHex(blue);
