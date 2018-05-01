@@ -6,13 +6,19 @@ $('#red-input, #green-input, #blue-input').keyup(function() {
   let green = Number($('#green-input').val());
   let blue = Number($('#blue-input').val());
 
-  red = convertToHex(red);
-  green = convertToHex(green);
-  blue = convertToHex(blue);
+  if (red > 255 || green > 255 || blue > 255) {
+    // Display error message
+    $('#hex-input').val('Not a valid input');
+  }
+  else {
+    red = convertToHex(red);
+    green = convertToHex(green);
+    blue = convertToHex(blue);
 
-  // Show output
-  let hexValue = '#' + red + green + blue;
-  $('#hex-input').val(hexValue);
+    // Show output
+    let hexValue = '#' + red + green + blue;
+    $('#hex-input').val(hexValue);
+  }
 });
 
 // Convert the hex input to a rgb value
@@ -31,10 +37,18 @@ $('#hex-input').keyup(function() {
   green = convertToDecimal(green);
   blue = convertToDecimal(blue);
 
-  // Show output
-  $('#red-input').val(red);
-  $('#green-input').val(green);
-  $('#blue-input').val(blue);
+  if (isNaN(red) || isNaN(green) || isNaN(blue)) {
+    // Display error message
+    $('#red-input').val('Not a');
+    $('#green-input').val('valid');
+    $('#blue-input').val('input');
+  }
+  else {
+    // Show output
+    $('#red-input').val(red);
+    $('#green-input').val(green);
+    $('#blue-input').val(blue);
+  }
 });
 
 // Convert a decimal to hexadecimal
