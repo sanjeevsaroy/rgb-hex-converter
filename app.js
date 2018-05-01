@@ -6,7 +6,7 @@ $('#red-input, #green-input, #blue-input').keyup(function() {
   let green = Number($('#green-input').val());
   let blue = Number($('#blue-input').val());
 
-  if (red > 255 || green > 255 || blue > 255) {
+  if (red > 255 || green > 255 || blue > 255 || isNaN(red) || isNaN(green) || isNaN(blue)) {
     // Display error message
     $('#hex-input').val('Not a valid input');
   }
