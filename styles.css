@@ -5,4 +5,11 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #F3CA40;
+  margin: 0;
+}
+
+input {
+  border: none;
+  background: none;
+  border-bottom: 1px solid black;
 }
