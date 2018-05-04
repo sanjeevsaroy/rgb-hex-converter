@@ -9,13 +9,28 @@ body {
   font-family: 'system-ui';
 }
 
+table {
+  width: 250px;
+  border-spacing: 0 15px;
+}
+
+td:first-of-type {
+  width: 100px;
+}
+
+label {
+  font-weight: bold;
+}
+
 input {
   border: none;
   background: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #00000030;
   font-size: 1em;
+  text-align: center;
+  padding: 4px 0;
 }
 
-#label-rgb-input {
-  width: 75px;
+.rgb-input {
+  width: 31.6%;
 }
