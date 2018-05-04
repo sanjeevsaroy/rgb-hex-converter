@@ -15,3 +15,7 @@ input {
   border-bottom: 1px solid black;
   font-size: 1em;
 }
+
+#label-rgb-input {
+  width: 75px;
+}

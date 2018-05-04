@@ -9,16 +9,20 @@
   <body>
 
     <div class="container">
-      <div class="input">
-        <label for="red-input">RGB:</label>
-        <input id="red-input" type="text" maxlength="3" value="255">
-        <input id="green-input" type="text" maxlength="3" value="255">
-        <input id="blue-input" type="text" maxlength="3" value="255">
-      </div>
-      <div class="input">
-        <label for="hex-input">HEX:</label>
-        <input id="hex-input" type="text" maxlength="7" value="#ffffff">
-      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td id="label-rgb-input"><label for="red-input">RGB:</label></td>
+            <td><input id="red-input" type="text" maxlength="3" value="255"></td>
+            <td><input id="green-input" type="text" maxlength="3" value="255"></td>
+            <td><input id="blue-input" type="text" maxlength="3" value="255"></td>
+          </tr>
+          <tr>
+            <td><label for="hex-input">HEX:</label></td>
+            <td colspan="3"><input id="hex-input" type="text" maxlength="7" value="#ffffff"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
