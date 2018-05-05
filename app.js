@@ -6,11 +6,9 @@ $('#red-input, #green-input, #blue-input').keyup(function() {
   let green = Number($('#green-input').val());
   let blue = Number($('#blue-input').val());
 
-  if (red > 255 || green > 255 || blue > 255 || isNaN(red) || isNaN(green) || isNaN(blue)) {
-    // Display error message
-    $('#hex-input').val('Not a valid input');
-  }
-  else {
+  let noErrors = (red <= 255) && (green <= 255) && (blue <= 255) && !isNaN(red) && !isNaN(green) && !isNaN(blue);
+
+  if (noErrors) {
     red = convertToHex(red);
     green = convertToHex(green);
     blue = convertToHex(blue);
@@ -18,6 +16,10 @@ $('#red-input, #green-input, #blue-input').keyup(function() {
     // Show output
     let hexValue = '#' + red + green + blue;
     $('#hex-input').val(hexValue);
+  }
+  else {
+    // Display error message
+    $('#hex-input').val('Not a valid input');
   }
 });
 
@@ -32,22 +34,25 @@ $('#hex-input').keyup(function() {
   let green = input.substring(3,5);
   let blue = input.substring(5,7);
 
-  // Convert each to its decimal value
-  red = convertToDecimal(red);
-  green = convertToDecimal(green);
-  blue = convertToDecimal(blue);
+  let regex = /([a-fA-F0-9]{2})/;
+  let noErrors = regex.test(red) && regex.test(green) && regex.test(blue);
 
-  if (isNaN(red) || isNaN(green) || isNaN(blue)) {
-    // Display error message
-    $('#red-input').val('Not a');
-    $('#green-input').val('valid');
-    $('#blue-input').val('input');
-  }
-  else {
+  if (noErrors) {
+    // Convert each to its decimal value
+    red = convertToDecimal(red);
+    green = convertToDecimal(green);
+    blue = convertToDecimal(blue);
+
     // Show output
     $('#red-input').val(red);
     $('#green-input').val(green);
     $('#blue-input').val(blue);
+  }
+  else {
+    // Display error message
+    $('#red-input').val('Not a');
+    $('#green-input').val('valid');
+    $('#blue-input').val('input');
   }
 });
 
